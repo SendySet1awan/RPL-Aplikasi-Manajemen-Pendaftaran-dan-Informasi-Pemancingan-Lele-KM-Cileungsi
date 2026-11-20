@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Laporan_Peserta" pageWidth="595" pageHeight="842" columnWidth="555"
+              leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20"
+              uuid="a1df2203-13bd-48c3-9688-ed94cecf2947">
+    <queryString language="SQL">
+        <![CDATA[SELECT id, nama, nomorLapak, metodeBayar, statusBayar FROM peserta]]>
+    </queryString>
+    <field name="id" class="java.lang.Integer"/>
+    <field name="nama" class="java.lang.String"/>
+    <field name="nomorLapak" class="java.lang.Integer"/>
+    <field name="metodeBayar" class="java.lang.String"/>
+    <field name="statusBayar" class="java.lang.String"/>
+
+    <background>
+        <band/>
+    </background>
+
+    <title>
+        <band height="72">
+            <frame>
+                <reportElement mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"
+                               uuid="b80df611-471d-48b5-a170-a625f294f541"/>
+                <staticText>
+                    <reportElement x="20" y="18" width="420" height="40" forecolor="#FFFFFF"
+                                   uuid="d09040b6-737f-4f23-9218-1fc64d284912"/>
+                    <textElement>
+                        <font size="24" isBold="true"/>
+                    </textElement>
+                    <text><![CDATA[LAPORAN DATA PESERTA]]></text>
+                </staticText>
+                <staticText>
+                    <reportElement x="20" y="58" width="420" height="22" forecolor="#E6E6E6"
+                                   uuid="02f6bc24-0233-40da-b2c7-1bb0699ab19b"/>
+                    <textElement>
+                        <font size="12"/>
+                    </textElement>
+                    <text><![CDATA[Pemancingan Lele KM Cileungsi]]></text>
+                </staticText>
+            </frame>
+        </band>
+    </title>
+
+    <pageHeader>
+        <band height="12"/>
+    </pageHeader>
+
+    <columnHeader>
+        <band height="24">
+            <staticText>
+                <reportElement mode="Opaque" x="0" y="0" width="55" height="22" forecolor="#FFFFFF" backcolor="#006699"
+                               uuid="70fa4e76-c0f8-4a7e-a982-d4465045dc84"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[ID]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="55" y="0" width="170" height="22" forecolor="#FFFFFF" backcolor="#006699"
+                               uuid="5d1d3983-4128-4127-8a8a-0ce99648fdbc"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[  Nama]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="225" y="0" width="90" height="22" forecolor="#FFFFFF" backcolor="#006699"
+                               uuid="92166ee4-49c7-44e0-84ae-334c336e888c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[No. Lapak]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="315" y="0" width="125" height="22" forecolor="#FFFFFF" backcolor="#006699"
+                               uuid="0f6b5c1a-d8e1-4953-99af-2c99aab3ce87"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Metode Bayar]]></text>
+            </staticText>
+            <staticText>
+                <reportElement mode="Opaque" x="440" y="0" width="115" height="22" forecolor="#FFFFFF" backcolor="#006699"
+                               uuid="04c7781f-bef6-493c-9cfb-08e808bf0d92"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Status Bayar]]></text>
+            </staticText>
+        </band>
+    </columnHeader>
+
+    <detail>
+        <band height="22">
+            <line>
+                <reportElement positionType="FixRelativeToBottom" x="0" y="21" width="555" height="1" forecolor="#CCCCCC"
+                               uuid="20c95bec-9f12-4b32-9846-821ce2ba3f7a"/>
+            </line>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="0" y="0" width="55" height="20" uuid="79b6e38a-61e4-4560-844d-885132288803"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="55" y="0" width="170" height="20" uuid="5b98edf7-93f0-4f32-aede-627f63691266"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA["  " + $F{nama}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="225" y="0" width="90" height="20" uuid="928c279f-f46c-4157-9c15-63a1468fb6ec"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{nomorLapak}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="315" y="0" width="125" height="20" uuid="c29d5678-1d76-48a6-a10d-e8163badf0c2"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{metodeBayar}]]></textFieldExpression>
+            </textField>
+            <textField textAdjust="StretchHeight">
+                <reportElement x="440" y="0" width="115" height="20" uuid="872df624-b5a7-4746-8ad8-f4fcecef201c"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$F{statusBayar}]]></textFieldExpression>
+            </textField>
+        </band>
+    </detail>
+
+    <columnFooter>
+        <band/>
+    </columnFooter>
+
+    <pageFooter>
+        <band height="20">
+            <textField pattern="dd/MM/yyyy">
+                <reportElement x="0" y="4" width="150" height="14" uuid="935e0a89-b299-4835-b1b8-dd4dccb99c00"/>
+                <textElement>
+                    <font size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="405" y="4" width="110" height="14" uuid="f217720d-1641-412d-a902-bb79fc09e020"/>
+                <textElement textAlignment="Right">
+                    <font size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA["Halaman " + $V{PAGE_NUMBER} + " dari "]]></textFieldExpression>
+            </textField>
+            <textField evaluationTime="Report">
+                <reportElement x="515" y="4" width="40" height="14" uuid="f751b87b-130b-4372-bd7a-08693fc44f9e"/>
+                <textElement>
+                    <font size="10"/>
+                </textElement>
+                <textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textField>
+            </textField>
+        </band>
+    </pageFooter>
+
+    <summary>
+        <band/>
+    </summary>
+</jasperReport>
